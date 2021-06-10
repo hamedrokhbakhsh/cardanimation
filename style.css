@@ -1,0 +1,796 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/made-soulmaze');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-underline: none;
+    list-style-type: none;
+    outline: none;
+    font-family: "Baloo Da 2", cursive;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/*navbar*/
+
+.navbar{
+    width: 100%;
+    height: 8rem;
+    background-color: rgba(0,0,0,.9);
+    position: fixed;
+    top: -8rem;
+    left: 0;
+    z-index: 10;
+    padding: 2rem;
+    transition: height 0.5s;
+    animation: navbarAnimation .5s 2s forwards;
+}
+
+@keyframes navbarAnimation {
+    0%{
+        top: -8rem;
+    }
+    100%{
+        top:0;
+    }
+
+}
+
+.change{
+    height: 100vh;
+}
+
+.logo{
+    position: absolute;
+    top:1.5rem;
+    left: 4rem;
+}
+.logo a{
+    font-family: "MADE Soulmaze", sans-serif;
+    font-size: 2.5rem;
+    color: #eee;
+    letter-spacing: .1rem;
+}
+.logo span {
+    font-family: "MADE Soulmaze", sans-serif;
+    font-size: 3.5rem;
+    font-weight: bolder;
+    color: #9e0e09;
+}
+
+.nav-list{
+     position: absolute;
+    top: 25%;
+    left:50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ;
+
+}
+
+.change .nav-list{
+    opacity: 1;
+    visibility: visible;
+    transition: all .5s .5s;
+}
+
+.nav-link{
+    font-family: "MADE Soulmaze", sans-serif;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    color: white;
+    margin: 2rem 0;
+    transition: color .4s;
+}
+
+.nav-link:hover{
+    color: #9b0e0e;
+}
+/*end navbar*/
+
+
+
+/*menu*/
+
+.menu{
+    height: 3rem;
+    width: 4rem;
+    position: fixed;
+    z-index: 100;
+    top: 2rem;
+    right: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.line{
+    width: 100%;
+    height: .1rem;
+    background-color: #eee;
+}
+.line-1{
+    width: 50%;
+    transition:all .5s;
+
+
+}
+
+.change .line-1{
+    transform: translate(100%, 1.5rem)rotate(35deg);
+    transform-origin: right;
+    transition:all .5s;
+
+}
+.line-3{
+    width: 50%;
+    margin-left: auto;
+    transition:all .5s;
+
+
+
+}
+.change .line-3{
+    transform: translateY(-1.5rem)rotate(-35deg);
+    transform-origin: right;
+    transition:all .5s;
+}
+/*   end of menu*/
+/*section 1*/
+.section-1 {
+    width: 100%;
+    height: 100vh;
+    background: url("./images/dark-bg.jpeg") no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.banner {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.banner-heading {
+    margin-bottom: 20rem;
+    height: 2rem;
+    perspective: 50rem;
+}
+.banner-heading span {
+    font-family: "Oswald", sans-serif;
+    font-size: 10rem;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: .3rem .3rem .5rem rgba(0, 0, 0, .5);
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    transform: translateZ(8rem);
+    opacity: 0;
+    letter-spacing: .3rem;
+
+}
+
+.heading-1 {
+    animation: animation-heading 12s 3s infinite;
+}
+
+.heading-2 {
+    animation: animation-heading 12s 6s infinite;
+}
+
+.heading-3 {
+    animation: animation-heading 12s 9s infinite;
+}
+
+.heading-4 {
+    animation: animation-heading 12s 12s infinite;
+}
+
+@keyframes animation-heading {
+    0% {
+        transform: translateZ(8rem);
+        opacity: 0;
+        letter-spacing: 3rem;
+
+    }
+    3% {
+        transform: translateZ(0rem);
+        opacity: 1;
+        letter-spacing: 1.5rem;
+
+    }
+    25% {
+        transform: translateZ(0rem);
+        opacity: 1;
+        letter-spacing: 1.5rem;
+    }
+    28% {
+        transform: translateZ(8rem);
+        opacity: 0;
+        letter-spacing: 3rem;
+    }
+    100% {
+        transform: translateZ(8rem);
+        opacity: 0;
+        letter-spacing: 3rem;
+    }
+
+}
+
+.banner-paragraph {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(0, 0, 0, .6);
+    width: 30%;
+    margin: 0 auto 4rem auto;
+    padding: 1rem 0;
+    box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, .5);
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeAnimate 1s 1.5s forwards;
+}
+
+.banner-btn {
+    height: 6rem;
+    width: 30rem;
+    background: linear-gradient(to right, #9b0e0e, #7a1010);
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 3rem;
+    border: .1rem solid #800505;
+    box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, .5);
+    text-shadow: .6rem .3rem .2rem rgba(0, 0, 0, .5);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeAnimate 1s 2s forwards;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.banner-btn::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, transparent, white, transparent);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transform: skewX(-30deg);
+    transition: left .5s;
+
+}
+
+.banner-btn:hover::before {
+    left: 100%;
+}
+
+@keyframes fadeAnimate {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+/*end section 1*/
+/* section 2*/
+.section-2{
+    width: 100%;
+    height: 100vh;
+    background-color: #222020;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10rem;
+    position: relative;
+}
+
+.section-heading{
+    font-family: "Oswald", sans-serif;
+    font-size: 10rem;
+    font-weight: 300;
+    color: #ddd;
+
+}
+.section-heading-line{
+    width: 15rem;
+    height: 0.1rem;
+    background: #ddd;
+    margin-left: 4rem;
+
+    margin-top: 4rem;
+}
+.video-wrapper{
+    width: 100rem;
+    height: 50rem;
+    position: absolute;
+    top: 5rem;
+    right: 15rem;
+    box-shadow: 3rem 3rem 3rem rgba(0,0,0,0.7);
+    overflow: hidden;
+}
+
+.controls{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    transform: translateY(calc(100% - .4rem));
+    transition: transform .2s;
+}
+.video-wrapper:hover .controls{
+    transform: translateY(0);
+
+}
+.button{
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+.button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+button i {
+    font-size: 2.4rem;
+    color: white;
+}
+.video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+.section-2-paragraph{
+    width: 100rem;
+    position: absolute;
+    bottom: 5rem;
+    right: 15rem;
+    font-size: 2rem;
+    color: white;
+    border-top: .3rem double #aaa;
+    border-bottom: .3rem double #aaa;
+
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-shadow: 1rem 1rem 3rem rgba(0,0,0,.7);
+}
+
+.fa-quote-left{
+    align-self: flex-start;
+    font-size: 5rem;
+}
+.fa-quote-right{
+    align-self:flex-end ;
+    font-size: 5rem;
+}
+.video-bar-wrappers{
+    position: absolute;
+    width: 100%;
+    height: 0.7rem;
+    background-color: #000000;
+    top: 0;
+    left: 0;
+
+}
+.video-bar{
+    width: 0%;
+    height: 100%;
+    background-color: #d30819;
+    transition: width .2s linear;
+}
+
+
+
+
+
+
+
+
+
+/*section 3*/
+.section-3{
+    width: 100%;
+    height: 100vh;
+    background-color: #03070e;
+    display: flex;
+    align-items: center;
+    padding: 0 10rem;
+}
+
+
+.pricing-card-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.pricing-card{
+    width: 28rem !important;
+    height: 45rem !important;
+    background-color: #181b1d;
+    border-radius: 1rem;
+    box-shadow: 2rem 2rem 6rem rgba(0,0,0,.7);
+
+}
+
+
+.pricing-card-front{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pricing-card-heading{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 300;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding-left:2rem;
+    text-transform: uppercase;
+}
+.heading-free{
+    background: linear-gradient(to right, #087285, #0da5d3);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.heading-basic{
+    background: linear-gradient(to right, #946809 , #bdba0e);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.heading-standard{
+    background: linear-gradient(to right, #a10c14, #e25b3b);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.heading-premium{
+    background: linear-gradient(to right, #0b7e48, #3be286);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.pricing-card-price{
+    color: white;
+    font-size: 7rem;
+    font-family: "MADE Soulmaze", sans-serif;
+    font-weight: 300;
+}
+
+.pricing-card-list{
+    margin-bottom: .5rem;
+}
+.list-free li{
+    color: #0da5d3;
+}
+
+.list-basic li{
+    color: #bdba0e;
+}
+.list-standard li{
+    color: #e23b3b;
+}
+.list-premium li{
+    color: #3be286;
+}
+
+
+
+
+
+.pricing-card-list i{
+    font-size: 1.8rem;
+    width: 3rem;
+}
+
+.pricing-card-list span{
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    font-weight: 300;
+}
+
+
+.pricing-card-btn{
+    width: 18rem;
+    height: 5rem;
+    margin-bottom: 3rem;
+    border-radius: 3rem;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    color: #fff;
+    text-shadow: .3rem .3rem .6rem rgba(0,0,0,0.5);
+}
+.btn-free{
+    background-color: #0da5d3;
+}
+
+
+.btn-basic{
+    background-color: #bdba0e;
+}
+.btn-standard{
+    background-color: #e23b3b;
+}
+.btn-premium{
+    background-color: #3be286;
+}
+
+
+.pricing-card-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    border-radius: 1rem;
+}
+
+.back-free{
+    background: linear-gradient(to right, #087285, #0da5d3);
+
+}
+.back-basic{
+    background: linear-gradient(to right, #946809 , #bdba0e);
+
+
+}
+.back-standard{
+    background: linear-gradient(to right, #a10c14, #e25b3b);
+
+
+}
+.back-premium{
+    background: linear-gradient(to right, #0b7e48, #3be286);
+
+}
+.pricing-card-back a{
+    font-size: 2.6rem;
+    color: #ffffff;
+}
+
+
+
+/*section 3*/
+
+
+/*section 4 */
+
+.section-4{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #171718;
+    padding: 0 10rem;
+    overflow: hidden;
+}
+.contact-wrapper{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.contact-detail{
+    display: flex;
+    margin-bottom: 8rem;
+}
+
+.contact-detail div{
+    width: 25rem;
+    text-align: center;
+    margin: 4rem;
+}
+.contact-detail i{
+    font-size: 4rem;
+    color: #7a1010;
+}
+.contact-detail h3{
+    font-size: 2.5rem;
+    font-family: "MADE Soulmaze", sans-serif;
+    margin: 2rem 0;
+    color: #ccc;
+}
+
+
+.contact-detail p{
+    font-size: 1.6rem;
+    color: #aaa;
+}
+
+.contact-wrapper h1{
+    font-size: 4rem;
+    color: #ccc;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+
+.contact-wrapper form{
+    width: 70rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-wrapper input,
+.contact-wrapper textarea{
+    border: none;
+    padding: 1.5rem;
+    background-color: #444;
+    color: #eee;
+    margin-bottom: 2rem;
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+    letter-spacing: .2rem;
+}
+.contact-wrapper textarea{
+    max-width: 100%;
+    max-height: 10rem;
+    min-width: 80%;
+    min-height: 5.5rem;
+}
+
+input.contact-btn{
+    background-color: #7a1010;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color .3s;
+
+}
+
+input.contact-btn:hover{
+    background-color: #5f0303;
+}
+/* end section 4 */
+
+/*footer*/
+
+
+.footer{
+    width: 100%;
+    height: 10rem;
+    background-color: #202122;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rem;
+    align-items: center;
+}
+.footer-nav a{
+    font-family: "MADE Soulmaze", sans-serif;
+    font-size: 2rem;
+    color: #ccc;
+    margin-right: 3rem;
+    letter-spacing: .1rem;
+    transition: color .3s;
+}
+
+
+.footer-nav a:hover{
+    color: #862323;
+}
+
+.copywrite{
+    font-size: 2rem;
+    color: #ddd;
+}
+/*end footer*/
+
+@media (max-width: 1815px) {
+    .video-wrapper{
+        width: 80rem;
+        height: 45rem;
+        right: 10rem;
+        top: 10rem;
+    }
+    .section-2-paragraph{
+        width: 80rem;
+        right0rem
+    }
+    
+}
+
+@media (max-width: 1650px){
+    .section-heading-line{
+        display: none;
+    }
+    html{
+        font-size: 57%;
+    }
+    .banner-paragraph{
+        font-size: 3rem;
+    }
+
+
+    .section-heading{
+        margin-right: 10rem;
+    }
+}
+
+@media (max-width: 1350px) {
+    html{
+        font-size: 45%;
+    }
+    .video-wrapper{
+        position: static;
+        width: 75rem;
+        height: 40rem;
+        right: 5rem;
+        top: 5rem;
+    }
+    .section-2-paragraph{
+        width: 75rem;
+        position: static;
+        right:5rem;
+        bottom: 5rem;
+        font-size: 1.7rem;
+    }
+
+    .section-2,
+    .section-3,
+    .section-4{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .section-heading{
+        margin: 0;
+    }
+    .section-2{
+        height: 120vh;
+    }
+    
+}
+@media (max-width: 1000px) {
+
+
+
+
+
+}
+
